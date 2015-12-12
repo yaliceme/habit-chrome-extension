@@ -10,10 +10,13 @@ chrome.storage.sync.get(null, function(response){
   lastCheckin = data.lastCheckin;
 });
 
+// When the "value" property of an input changes
 
-// chrome.storage.sync.set({'habit': habit, 'consecutiveDays': consecutiveDays, 'lastCheckin': lastCheckin});
+  // Update the value of "data"
+  habit = document.getElementById("habit").value;
+  consecutiveDays = document.getElementById("consecutiveDays").value;
+  lastCheckin = document.getElementById("lastCheckin").value;
 
 
-// var habit = document.getElementById("habit").value;
-// var consecutiveDays = document.getElementById("consecutiveDays").value;
-// var lastCheckin = document.getElementById("lastCheckin").value;
+  // Save "data" to storage
+  chrome.storage.sync.set({'habit': habit, 'consecutiveDays': consecutiveDays, 'lastCheckin': lastCheckin});
