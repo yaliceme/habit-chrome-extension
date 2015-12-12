@@ -11,12 +11,24 @@ chrome.storage.sync.get(null, function(response){
   lastCheckin = data.lastCheckin;
 
   // Set the value of the inputs to the data from storage
+
+  //TODO add if statements to set the value to some default value if habit etc do not have a value
   document.getElementById("habit").value = habit;
+  document.getElementById("consecutiveDays").value = consecutiveDays;
+  document.getElementById("lastCheckin").value = lastCheckin;
 });
 
 // set event listeners
 // When the "value" property of habit changes
 
+document.getElementById("habit").addEventListener("change", function () {
+  alert("you made a change");
+  //chrome.storage.sync.set call to modify 'habit' property to document.getElementById("habit").value
+});
+
+
+document.getElementById("consecutiveDays").value = consecutiveDays;
+document.getElementById("lastCheckin").value = lastCheckin;
 
 // Event handler for habit changes
 var saveHabit = function(response){
