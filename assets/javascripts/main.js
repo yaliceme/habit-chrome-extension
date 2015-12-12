@@ -1,3 +1,4 @@
+// Initialize
 var data = {}
 var habit = ''
 var consecutiveDays = ''
@@ -8,15 +9,27 @@ chrome.storage.sync.get(null, function(response){
   habit = data.habit;
   consecutiveDays = data.consecutiveDays;
   lastCheckin = data.lastCheckin;
+
+  // Set the value of the inputs to the data from storage
+  document.getElementById("habit").value = habit;
 });
 
-// When the "value" property of an input changes
+// set event listeners
+// When the "value" property of habit changes
 
-  // Update the value of "data"
+
+// Event handler for habit changes
+var saveHabit = function(response){
+  alert(response);
+}
+
+var updateAndSaveData = function(){
+  // Update the values of our data models to the new value
   habit = document.getElementById("habit").value;
   consecutiveDays = document.getElementById("consecutiveDays").value;
   lastCheckin = document.getElementById("lastCheckin").value;
 
 
-  // Save "data" to storage
+  // Save the data to storage
   chrome.storage.sync.set({'habit': habit, 'consecutiveDays': consecutiveDays, 'lastCheckin': lastCheckin});
+}
