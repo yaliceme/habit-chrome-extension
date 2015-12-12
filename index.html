@@ -8,16 +8,24 @@
   <body>
     <form>
       <p>My tiny daily commitment is: <span></span></p>
-      <input value="Do one pushup" id="habit">
+      <input id="habit">
 
       <p>I have done my tiny commitment for this many days in a row: <span></span></p>
-      <input value="0" id="consecutiveDays">
+      <input id="consecutiveDays">
 
       <p>Most recent checkin: <span></span></p>
-      <input value="Dec 10, 2015" id="lastCheckin">
+      <input id="lastCheckin">
 
     </form>
     <script src="assets/javascripts/main.js"></script>
+    <!--
+    jQuery way to set values for the input elements:
+    <script>
+      $('input #habit').val(habit);
+      $('input #consecutiveDays').val(consecutiveDays);
+      $('input #lastCheckin').val(lastCheckin);
+    </script>
+    -->
 
   </body>
 
